@@ -152,6 +152,7 @@ body {
 header {
     min-height: 78px;
     background-color: #262626;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
