@@ -132,11 +132,11 @@
 
 @font-face {
     font-family: 'entyporegular';
-    src: url('/fonts/entypo/entypo-webfont.eot');
-    src: url('/fonts/entypo/entypo-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/entypo/entypo-webfont.woff2') format('woff2'),
-    url('/fonts/entypo/entypo-webfont.woff') format('woff'),
-    url('/fonts/entypo/entypo-webfont.ttf') format('truetype');
+    src: url('fonts/entypo/entypo-webfont.eot');
+    src: url('fonts/entypo/entypo-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/entypo/entypo-webfont.woff2') format('woff2'),
+    url('fonts/entypo/entypo-webfont.woff') format('woff'),
+    url('fonts/entypo/entypo-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -229,18 +229,56 @@ header {
     justify-content: space-between;
     padding-right: 30px;
 }
+.main-menu ul {
+    padding: 0;
+    margin: 0;
+}
+.main-menu-item {
+    list-style-type: none;
+    line-height: 0;
+    border: 0;
+}
 .main-menu-item a {
+    text-transform: uppercase;
+    background-color: rgba(249, 249, 249, 0.7);
     position: relative;
-    padding-left: 30px;
+    text-decoration: none;
+    font: 14px/18px 'montserratbold';
+    color: white;
+    display: inline-block;
+    min-width: 70px;
+    min-height: 70px;
+    box-sizing: border-box;
+    border: 1px solid #e7e7e7;
+    border-top-width: 0;
 }
 .main-menu-item a:before {
-    font: 18px/1 'entyporegular';
+    font: 44px/1 'entyporegular';
     position: absolute;
     content:'\0049';
-    width: 20px;
-    height: 20px;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 20px;
+    color: red;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.main-menu-item a span {
+    display: none;
+}
+.main-menu-item a:hover {
+    border: none;
+}
+.main-menu-item a:hover:before {
+    color: white;
+}
+.main-menu-item a:hover span {
+    background-color: #5692b1;
+    display: block;
+    padding: 27px 20px 25px 64px;
+    box-shadow: 0 2px 4px 0 rgba(23, 23, 23, 0.17);
+    z-index: 1;
+    position: absolute;
+    
 }
 article {
     flex-basis: 30%;
