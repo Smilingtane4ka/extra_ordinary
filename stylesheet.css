@@ -261,6 +261,7 @@ header {
     color: red;
     transform: translateY(-50%);
     z-index: 2;
+    
 }
 .main-menu-item a span {
     display: none;
