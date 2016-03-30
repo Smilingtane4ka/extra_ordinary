@@ -255,13 +255,39 @@ header {
 .main-menu-item a:before {
     font: 44px/1 'entyporegular';
     position: absolute;
-    content:'\0049';
+    content:'';
     top: 50%;
     left: 20px;
     color: red;
     transform: translateY(-50%);
     z-index: 2;
 }
+.main-menu-item:first-child a:before {
+    content: '\0046';
+    color: #14b9d6;
+}
+.main-menu-item:nth-child(2) a:before {
+    content: '\1f3b5';
+    color: red;
+}
+.main-menu-item:nth-child(3) a:before {
+    content: '\0044';
+    color: #2eb398;
+}
+.main-menu-item:nth-child(4) a:before {
+    content: '\1f3ac';
+    color: #90899c;
+}
+/*.main-menu-item:nth-child(2) a:before {
+    content: '\0048';
+    background-color: #e76049;
+    color: white;
+}
+.main-menu-item:nth-child(2) a:before {
+    content: '\0048';
+    background-color: #e76049;
+    color: white;
+}*/
 .main-menu-item a span {
     display: none;
 }
@@ -270,6 +296,7 @@ header {
 }
 .main-menu-item a:hover:before {
     color: white;
+    background-color: transparent;
 }
 .main-menu-item a:hover span {
     background-color: #5692b1;
