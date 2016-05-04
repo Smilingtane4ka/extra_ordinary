@@ -143,7 +143,7 @@
 
 body {
     font: 14px/22px 'open_sansregular';
-    width: 100vw;
+    max-width: 100vw;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -166,16 +166,6 @@ header {
     padding-left: 2px;
     padding-right: 14px;
 }
-.sitename:before {
-    font: 18px/1 'entyporegular';
-    position: absolute;
-    content:'\0049';
-    width: 20px;
-    height: 20px;
-    top: 0;
-    left: 0;
-}
-
 .logo,
 .sitename {
     display: inline-block;
@@ -251,43 +241,55 @@ header {
     box-sizing: border-box;
     border: 1px solid #e7e7e7;
     border-top-width: 0;
+    white-space: nowrap;
 }
 .main-menu-item a:before {
-    font: 44px/1 'entyporegular';
+    background-image: url('img/icons.png');
     position: absolute;
     content:'';
     top: 50%;
     left: 20px;
-    color: red;
     transform: translateY(-50%);
     z-index: 2;
+    width: 20px;
 }
-.main-menu-item:first-child a:before {
-    content: '\0046';
-    color: #14b9d6;
+.main-menu-item a:hover:before {
+    background-image: url('img/icons-hover.png');
 }
-.main-menu-item:nth-child(2) a:before {
-    content: '\1f3b5';
-    color: red;
+
+.main-menu-item.palette a:before {
+    background-position: -2px -64px;
+    height: 16px;
 }
-.main-menu-item:nth-child(3) a:before {
-    content: '\0044';
-    color: #2eb398;
+.main-menu-item.music a:before {
+    background-position: -2px -157px;
+    height: 18px;
 }
-.main-menu-item:nth-child(4) a:before {
-    content: '\1f3ac';
-    color: #90899c;
+.main-menu-item.photo a:before {
+    background-position: -2px -45px;
+    height: 17px;
 }
-/*.main-menu-item:nth-child(2) a:before {
-    content: '\0048';
-    background-color: #e76049;
-    color: white;
+.main-menu-item.video a:before {
+    background-position: -2px -102px;
+    height: 14px;
 }
-.main-menu-item:nth-child(2) a:before {
-    content: '\0048';
-    background-color: #e76049;
-    color: white;
-}*/
+.main-menu-item.business a:before {
+    background-position: -2px -82px;
+    height: 18px;
+}
+.main-menu-item.travel a:before {
+    background-position: -2px -24px;
+    height: 19px;
+}
+.main-menu-item.shopping a:before {
+    background-position: -2px -118px;
+    height: 17px;
+}
+.main-menu-item.add a:before {
+    background-position: -2px -0px;
+    width: 22px;
+    height: 22px;
+}
 .main-menu-item a span {
     display: none;
 }
@@ -306,12 +308,7 @@ header {
     z-index: 1;
     position: absolute;
 }
-article {
-    flex-basis: 30%;
-    border: 1px solid #ebebeb;
-    border-bottom: 5px solid #5692b1;
-    margin-top: 30px;
-}
+
 .content-wrapper {
     display: flex;
     flex-wrap: nowrap;
@@ -323,3 +320,78 @@ article {
     display: inline-block;
     margin-right: 20px;
 }
+article {
+    flex-basis: 30%;
+    border: 1px solid #ebebeb;
+    border-bottom: 5px solid;
+    margin-top: 30px;
+}
+article:first-child {
+    border-bottom-color: #2eb398;
+}
+article:nth-child(2) {
+    border-bottom-color: #e76049;
+}
+article:nth-child(3) {
+    border-bottom-color: #5692b1;
+}
+article:nth-child(4) {
+    border-bottom-width: 1px;
+    border-bottom-color: #ebebeb;
+}
+article:nth-child(5) {
+    border-bottom-color: #90899c;
+}
+article:nth-child(6) {
+    border-bottom-color: #14b9d6;
+}
+.article-content {
+    padding: 30px 30px 20px;
+    position: relative;
+}
+.article-content:before {
+    content: '';
+    position: absolute;
+    left: 53px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #ffffff;
+    top: -18px;
+}
+.article-image img {
+    width: 100% !important;
+    height: auto !important;
+}
+.date, .comment {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    color:  #9d9d9d;
+    font: 12px/1 'open_sanssemibold';
+}
+.date:before,
+.comment:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background-image: url(img/info-icons.png);
+    width: 14px;
+    height: 13px;
+}
+.comment:before {
+    background-position: -2px -0px;
+}
+.date:before {
+    background-position: -2px -15px;
+}
+.article-title {
+    font: 26px/30px 'montserratbold';
+}
+/*
+.comment { background-position: -2px -0px; width: 14px; height: 13px; }
+.calendar { background-position: -2px -15px; width: 13px; height: 13px; }*/
+
