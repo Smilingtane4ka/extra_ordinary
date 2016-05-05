@@ -333,12 +333,14 @@ header {
     margin: 0;
     padding: 15px;
     padding-left: 85px;
+    box-sizing: border-box;
 }
 .article-column {
     display: inline-block;
-    width: 31.5%;
+    width: 33%;
     padding: 15px;
     vertical-align: top;
+    box-sizing: border-box;
 }
 article {
     border: 1px solid #ebebeb;
