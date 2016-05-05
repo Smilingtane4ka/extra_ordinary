@@ -190,11 +190,30 @@ header {
 .social {
     padding-right: 55px;
 }
+.search, .user {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+.search:before, .user:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+}
 .search {
     padding-right: 55px;
 }
+.search:before {
+    background: url('img/search.png') no-repeat center;
+}
 .user {
     padding-right: 4px;
+}
+.user:before {
+    background: url('img/user.png') no-repeat center;
 }
 .social span {
     color: white;
@@ -299,7 +318,6 @@ header {
     border-color: transparent;
 }
 .main-menu-item a:hover:before {
-    color: white;
     background-color: transparent;
 }
 .main-menu-item a:hover span {
@@ -309,6 +327,7 @@ header {
     box-shadow: 0 2px 4px 0 rgba(23, 23, 23, 0.17);
     z-index: 1;
     position: absolute;
+    color: white;
 }
 .main-menu-item-empty {
     background-color: rgba(249, 249, 249, 0.7);
@@ -335,11 +354,18 @@ header {
     padding-left: 85px;
     box-sizing: border-box;
 }
+.content:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
 .article-column {
-    display: inline-block;
-    width: 33%;
+    float: left;
+    width: 33.3%;
     padding: 15px;
-    vertical-align: top;
     box-sizing: border-box;
 }
 article {
@@ -414,10 +440,10 @@ a.article-image {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
-.info-section {
+.article-info {
     padding: 0 3px;
 }
-.date, .comment {
+.article-info-date, .article-info-comment {
     font: 12px/1 'open_sanssemibold';
     letter-spacing: -0.3px;
     display: inline-block;
@@ -426,8 +452,8 @@ a.article-image {
     padding-right: 18px;
     color:  #9d9d9d;
 }
-.date:before,
-.comment:before {
+.article-info-date:before,
+.article-info-comment:before {
     position: absolute;
     content: '';
     top: 0;
@@ -436,10 +462,16 @@ a.article-image {
     width: 14px;
     height: 13px;
 }
-.comment:before {
+.article-info-comment a {
+    color:  #9d9d9d;
+}
+.article-info-comment a:hover {
+    text-decoration: none;
+}
+.article-info-comment:before {
     background-position: -2px -0px;
 }
-.date:before {
+.article-info-date:before {
     background-position: -2px -15px;
 }
 .article-title {
@@ -448,7 +480,7 @@ a.article-image {
     margin: 0;
     padding: 16px 0 10px;
 }
-p {
+.article-text {
     margin: 0;
     padding-bottom: 18px;
     letter-spacing: -0.3px;
