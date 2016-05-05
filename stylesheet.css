@@ -142,11 +142,13 @@
 }
 
 body {
-    font: 14px/22px 'open_sansregular';
     max-width: 100vw;
     height: 100%;
     margin: 0;
     padding: 0;
+}
+body, h1, h2, h3, h4, h5, h6 {
+    font: 14px/22px 'open_sansregular';
 }
 header {
     min-height: 78px;
@@ -208,10 +210,10 @@ header {
 .user .user-menu {
     display: none;
 }
-.content-wrapper {
+.page-wrapper {
     position: relative;
 }
-.menu-wrapper {
+.menu {
     width: 70px;
     position: absolute;
     border-right: 1px solid #e7e7e7;
@@ -257,35 +259,35 @@ header {
     background-image: url('img/icons-hover.png');
 }
 
-.main-menu-item.palette a:before {
+.main-menu-item-palette a:before {
     background-position: -2px -64px;
     height: 16px;
 }
-.main-menu-item.music a:before {
+.main-menu-item-music a:before {
     background-position: -2px -157px;
     height: 18px;
 }
-.main-menu-item.photo a:before {
+.main-menu-item-photo a:before {
     background-position: -2px -45px;
     height: 17px;
 }
-.main-menu-item.video a:before {
+.main-menu-item-video a:before {
     background-position: -2px -102px;
     height: 14px;
 }
-.main-menu-item.business a:before {
+.main-menu-item-business a:before {
     background-position: -2px -82px;
     height: 18px;
 }
-.main-menu-item.travel a:before {
+.main-menu-item-travel a:before {
     background-position: -2px -24px;
     height: 19px;
 }
-.main-menu-item.shopping a:before {
+.main-menu-item-shopping a:before {
     background-position: -2px -118px;
     height: 17px;
 }
-.main-menu-item.add a:before {
+.main-menu-item-add a:before {
     background-position: -2px -0px;
     width: 22px;
     height: 22px;
@@ -308,35 +310,33 @@ header {
     z-index: 1;
     position: absolute;
 }
-li.empty {
+.main-menu-item-empty {
     background-color: rgba(249, 249, 249, 0.7);
     height: 300px;
     border-bottom: 1px solid #e7e7e7;
 }
-li.settings a {
+.main-menu-item-settings a {
     background-color: white;
 }
-li.settings a:before {
+.main-menu-item-settings a:before {
     background-position: -2px -135px;
     height: 22px;
 }
-li.settings a:hover {
+.main-menu-item-settings a:hover {
     background-color: white;
     border-bottom: 1px solid #e7e7e7;
 }
-li.settings a:hover:before {
+.main-menu-item-settings a:hover:before {
     background-image: url('img/icons.png');
 }
-.main-wrapper {
+.content {
     margin: 0;
     padding: 15px;
     padding-left: 85px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 .article-column {
-    flex-basis: 32%;
+    display: inline-block;
+    width: 31.5%;
     padding: 15px;
     vertical-align: top;
 }
