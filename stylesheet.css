@@ -151,26 +151,41 @@ body, h1, h2, h3, h4, h5, h6 {
     font: 14px/22px 'open_sansregular';
 }
 header {
-    min-height: 78px;
     background-color: #262626;
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 0 30px;
+    padding: 0;
 }
-.logo-wrapper,
-.account-wrapper {
-    flex-basis: 50%;
-    margin: auto 0;
+header:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 .logo {
-    padding-left: 2px;
-    padding-right: 14px;
+    box-sizing: border-box;
+    padding: 30px 14px 30px 32px;
+    text-align: left;
+    float: left;
 }
-.logo,
-.sitename {
+.logo-image, .sitename {
     display: inline-block;
+}
+.logo-image {
+    position: relative;
+    width: 18px;
+    height: 17px;
+}
+.logo-image span {
+    display: none;
+}
+.logo-image:before {
+    position: absolute;
+    content: '';
+    background: url('img/logo.png') no-repeat center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 .sitename {
     font: 20px/1 'montserratregular';
@@ -179,22 +194,22 @@ header {
     letter-spacing: -0.6px;
 }
 .account-wrapper {
-    text-align: right;
-    width: 80%;
+    float: right;
+    box-sizing: border-box;
+    padding: 0;
 }
-.social,
-.search,
-.user  {
+.social, .search, .user  {
     display: inline-block;
-}
-.social {
-    padding-right: 55px;
+    border-left: 1px solid rgba(235, 235, 235, 0.05);
+    padding: 30px;
+    box-sizing: border-box;
 }
 .search, .user {
     position: relative;
-    width: 20px;
-    height: 20px;
 }
+.search span, .user span {
+    display: none;
+ }
 .search:before, .user:before {
     position: absolute;
     content: '';
@@ -203,14 +218,9 @@ header {
     width: 20px;
     height: 20px;
 }
-.search {
-    padding-right: 55px;
-}
+
 .search:before {
     background: url('img/search.png') no-repeat center;
-}
-.user {
-    padding-right: 4px;
 }
 .user:before {
     background: url('img/user.png') no-repeat center;
@@ -221,9 +231,6 @@ header {
     text-transform: uppercase;
 }
 .social ul {
-    display: none;
-}
-.search form {
     display: none;
 }
 .user .user-menu {
