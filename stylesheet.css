@@ -150,6 +150,9 @@ body {
 body, h1, h2, h3, h4, h5, h6 {
     font: 14px/22px 'open_sansregular';
 }
+.hidden-label {
+    display: none;
+}
 header {
     background-color: #262626;
     padding: 0;
@@ -175,9 +178,6 @@ header:after {
     width: 18px;
     height: 17px;
 }
-.logo-image span {
-    display: none;
-}
 .logo-image:before {
     position: absolute;
     content: '';
@@ -201,40 +201,103 @@ header:after {
 .social, .search, .user  {
     display: inline-block;
     border-left: 1px solid rgba(235, 235, 235, 0.05);
-    padding: 30px;
+    padding: 31px;
     box-sizing: border-box;
+    vertical-align: middle;
 }
-.search, .user {
+.search-icon, .user-icon {
     position: relative;
+    width: 20px;
+    height: 20px;
 }
-.search span, .user span {
-    display: none;
- }
-.search:before, .user:before {
+.search-icon:before, .user-icon:before {
     position: absolute;
     content: '';
     top: 0;
     left: 0;
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
-.search:before {
+.search-icon:before {
     background: url('img/search.png') no-repeat center;
 }
-.user:before {
+.user-icon:before {
     background: url('img/user.png') no-repeat center;
+}
+.social {
+    position: relative;
 }
 .social span {
     color: white;
     font: 14px/18px 'montserratbold';
     text-transform: uppercase;
+    cursor: pointer;
 }
-.social ul {
+.social .social-menu {
     display: none;
 }
-.user .user-menu {
-    display: none;
+.social:hover .social-menu {
+    display: block;
+}
+.social-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    z-index: 1;
+    border: 1px solid #484848;
+    border-top-width: 0;
+
+}
+.social-menu li {
+    border-bottom: 1px solid #e7e7e7;
+}
+.social-menu li:last-of-type {
+    border: 0;
+}
+.social-menu a {
+    display: inline-block;
+    padding: 15px 50px 15px 0;
+}
+.social-menu span {
+    display: inline-block;
+}
+/*.c-facebook { background-position: -2px -0px;  }
+.c-google-1 { background-position: -24px -0px; width: 20px; height: 20px; }
+.c-pinterest-1 { background-position: -2px -22px; width: 20px; height: 20px; }
+.c-twitter-1 { background-position: -24px -22px; width: 20px; height: 20px; }*/
+
+.social-menu .social-menu-icon {
+    padding-right: 15px;
+    border-right: 1px solid #e7e7e7;
+    position: relative;
+}
+.social-menu .social-menu-label {
+
+}
+.social-menu .social-menu-icon:before {
+    position: absolute;
+    content: '';
+    left: 15px;
+    top: 15px;
+    width: 22px;
+    height: 20px;
+    background-image: url('img/social-icons.png');
+}
+
+.social-menu-icon-facebook:before {
+    background-position: -2px -0px;
+}
+.social-menu-icon-twitter:before {
+    background-position: -24px -22px;
+}
+.social-menu-icon-google:before {
+    background-position: -24px -0px;
+}
+.social-menu-icon-pinterest:before {
+    background-position: -2px -22px;
 }
 .page-wrapper {
     position: relative;
