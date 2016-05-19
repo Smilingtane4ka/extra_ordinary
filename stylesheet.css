@@ -258,8 +258,8 @@ header:after {
     border: 0;
 }
 .social-menu a {
-    display: inline-block;
-    padding: 15px 50px 15px 0;
+    display: block;
+    padding: 0;
 }
 .social-menu span {
     display: inline-block;
@@ -273,8 +273,11 @@ header:after {
     padding-right: 15px;
     border-right: 1px solid #e7e7e7;
     position: relative;
+    width: 30px;
+    height: 30px;
 }
 .social-menu .social-menu-label {
+    color: black;
 
 }
 .social-menu .social-menu-icon:before {
