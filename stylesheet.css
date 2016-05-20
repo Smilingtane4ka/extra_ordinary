@@ -154,7 +154,12 @@ body, h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 header {
-    background-color: #262626;
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background-color:  #262626;
     padding: 0;
 }
 header:after {
@@ -166,7 +171,7 @@ header:after {
 }
 .logo {
     box-sizing: border-box;
-    padding: 30px 14px 30px 32px;
+    padding: 30px 14px 24px 32px;
     text-align: left;
     float: left;
 }
@@ -201,9 +206,19 @@ header:after {
 .social, .search, .user  {
     display: inline-block;
     border-left: 1px solid rgba(235, 235, 235, 0.05);
-    padding: 31px;
     box-sizing: border-box;
     vertical-align: middle;
+}
+.social:hover, .search:hover, .user:hover {
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background-color:  #1e1e1e;
+}
+.search {
+    padding: 26px 24px 29px;
 }
 .search-icon, .user-icon {
     position: relative;
@@ -223,11 +238,15 @@ header:after {
 .search-icon:before {
     background: url('img/search.png') no-repeat center;
 }
+.user {
+    padding: 26px 31px 29px;
+}
 .user-icon:before {
     background: url('img/user.png') no-repeat center;
 }
 .social {
     position: relative;
+    padding: 28px 30px 27px;
 }
 .social .social-label {
     color: white;
