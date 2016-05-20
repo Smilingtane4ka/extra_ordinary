@@ -154,7 +154,12 @@ body, h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 header {
-    background-color: #262626;
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background-color:  #262626;
     padding: 0;
 }
 header:after {
@@ -166,7 +171,7 @@ header:after {
 }
 .logo {
     box-sizing: border-box;
-    padding: 30px 14px 30px 32px;
+    padding: 30px 14px 24px 32px;
     text-align: left;
     float: left;
 }
@@ -201,9 +206,19 @@ header:after {
 .social, .search, .user  {
     display: inline-block;
     border-left: 1px solid rgba(235, 235, 235, 0.05);
-    padding: 31px;
     box-sizing: border-box;
     vertical-align: middle;
+}
+.social:hover, .search:hover, .user:hover {
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.01) 0%, rgba(35, 36, 37, 0.01) 100%);
+    background-color:  #1e1e1e;
+}
+.search {
+    padding: 26px 24px 29px;
 }
 .search-icon, .user-icon {
     position: relative;
@@ -223,13 +238,17 @@ header:after {
 .search-icon:before {
     background: url('img/search.png') no-repeat center;
 }
+.user {
+    padding: 26px 31px 29px;
+}
 .user-icon:before {
     background: url('img/user.png') no-repeat center;
 }
 .social {
     position: relative;
+    padding: 28px 30px 27px;
 }
-.social span {
+.social .social-label {
     color: white;
     font: 14px/18px 'montserratbold';
     text-transform: uppercase;
@@ -248,6 +267,7 @@ header:after {
     background-color: white;
     z-index: 1;
     border: 1px solid #484848;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.18);
     border-top-width: 0;
 
 }
@@ -260,34 +280,35 @@ header:after {
 .social-menu a {
     display: block;
     padding: 0;
+    white-space: nowrap;
+
 }
 .social-menu span {
     display: inline-block;
+    vertical-align: middle;
 }
-/*.c-facebook { background-position: -2px -0px;  }
-.c-google-1 { background-position: -24px -0px; width: 20px; height: 20px; }
-.c-pinterest-1 { background-position: -2px -22px; width: 20px; height: 20px; }
-.c-twitter-1 { background-position: -24px -22px; width: 20px; height: 20px; }*/
-
 .social-menu .social-menu-icon {
     padding-right: 15px;
     border-right: 1px solid #e7e7e7;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 44px;
 }
 .social-menu .social-menu-label {
     color: black;
-
+    text-transform: uppercase;
+    font: 13px/44px 'open_sansbold';
+    padding: 0 50px 0 11px;
 }
 .social-menu .social-menu-icon:before {
     position: absolute;
     content: '';
-    left: 15px;
-    top: 15px;
     width: 22px;
     height: 20px;
     background-image: url('img/social-icons.png');
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .social-menu-icon-facebook:before {
